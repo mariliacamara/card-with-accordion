@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.card {
+  width: 250px;
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.card-front img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.card-front .card-info {
+  padding: 20px 20px 40px;
+}
+
+.card-front h3 {
+  font-family: 'Barlow', serif;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.card-front p {
+  font-family: 'Lora', serif;
+  color: #777;
+}
+
+/* Overlay to show on hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(89, 127, 113, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card-front:hover .overlay {
+  opacity: 1;
+}
+
+.learn-more {
+  width: 130px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Lora', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.learn-more span {
+  font-size: 50px;
+  color: #fff;
+}
+
+/* Description Box */
+.description-box {
+  width: 100%;
+  color: #444;
+  background-color: #fff;
+  padding: 60px 60px 20px;
+  text-align: center;
+  display: none; /* Hidden by default */
+  margin-top: 20px;
+}
+
+.description-box h3 {
+  font-family: 'Lora', sans-serif;
+  font-size: 52px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 10px;
+  padding-bottom: 60px;
+}
+
+.description-box p {
+  font-family: 'Barlow', sans-serif;
+  margin-bottom: 10px;
+  font-size: 34px;
+  color: rgba(89, 127, 113, 1);
+  font-weight: 200;
+}
+
+.description-box ~ .row {
+  padding-top: 48px; /* Add 20px padding to all subsequent rows */
+}
+
+/* Style the close (X) button for the description box */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #777;
+}
+
+
+/* Disabled card styling */
+.disabled {
+  opacity: 0.5; /* Makes the disabled cards appear dim */
+  pointer-events: none; /* Prevents click events */
+  cursor: not-allowed; /* Shows a not-allowed cursor */
+}
